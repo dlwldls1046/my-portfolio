@@ -1,49 +1,56 @@
-import { useNavigation } from 'next/navigation'
-import React from 'react'
+// pages/index.js
+import React, { useState } from 'react'
 import { FaGithub, FaInstagram } from 'react-icons/fa'
 
-const page = () => {
+const Home = () => {
+  const [projectInfo, setProjectInfo] = useState('')
+
+  const showProjectInfo = (info) => {
+    setProjectInfo(info)
+  }
+
   return (
     <div>
       <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>PORTFOLIO</h1>
       </header>
       <div className="section-wrapper">
-        <section>
-          <strong class="week-description">
-            <h2>About Me</h2>
-          </strong>
+        <section className="about-me-section">
+          <h2>About Me</h2>
           <p>
-            안녕하세요. 저는 중부대학교에서 정보보호학을 전공 중인 김시우입니다.
+            중부대학교 정보보호학과
           </p>
-          <p>현재 next.js, HTML, CSS, JavaScript 를 배우고 있습니다.</p>
+          <p>인투에듀 코칭 강사</p>
         </section>
       </div>
       <div className="section-wrapper">
-        <section>
-          <strong class="week-description">
-            <h2>Projects</h2>
-          </strong>
+        <section className="projects-section">
+          <h2>Projects</h2>
           <ul>
-            <li>
+            <li
+              className="project-item"
+              onMouseOver={() => showProjectInfo('쇼핑몰 사이트 제작(F.N.S)')}
+            >
               <strong>
-                <h3>쇼핑몰 사이트 제작(F.N.S):</h3>
+                <h3>2023</h3>
               </strong>
-              <p>스터디에서 제작 중인 쇼핑몰 프로그램.</p>
-              <p>HTML, CSS, JavaScript 등의 기본 언어 사용.</p>
-              <p>
-                23.10.07) 로그인, 장바구니, 찜 기능 메인 홈페이지의 기능
-                구현까지 완료
+              <p>- 쇼핑몰 프로그램 제작</p>
+              <p>- 교육 코칭 강사 자격증 취득</p>
+              <p>- 언어 기초 공부, 사이트 제작
               </p>
-              <a href="https://github.com/8woo4/Shopping">*GitHub 바로가기*</a>
+              <a href="https://github.com/dlwldls1046">*GitHub 바로가기*</a>
             </li>
-            <li>
+            <li
+              className="project-item"
+              onMouseOver={() =>
+                showProjectInfo('팀원들의 성씨를 따와 재치 있게 하나로 연결')
+              }
+            >
               <strong>
-                <h3>홍이김송윤:</h3>
+                <h3>TEAM PROJECT</h3>
               </strong>
               <p>Next.js 기반의 프로그램. 관리자 서버를 활용한 승인 사이트</p>
-              <p>(웹서버보안프로그래밍 팀 과제-제작 예정)</p>
-              <p>-참여팀원-</p>
+              <p>Team name: 홍이김송윤</p>
               <p>
                 92212958 윤다혜 92212776 김시우 92212879 송지현 92213029 이지인
                 92213158 홍준희
@@ -53,63 +60,18 @@ const page = () => {
           </ul>
         </section>
       </div>
-      <div className="section-wrapper">
-        <section>
-          <strong>
-            <h2 class="week-description">개인공부</h2>
-          </strong>
-
-          <p class="week-description">1주차</p>
-          <p class="week-description">
-            <a href="https://www.notion.so/1st-8cde5585399641099c9d3971478b4fe9?pvs=4">
-              html 기본 태그, 속성 학습, W3School 예제, 실습코드
-            </a>
-          </p>
-
-          <p class="week-description">2주차</p>
-          <p class="week-description">
-            <a href="https://www.notion.so/2nd-8f854f3417c14154b71e800dc61eba2c?pvs=4">
-              Javascript 태그, 속성 학습. 실습코드 작성
-            </a>
-          </p>
-          <p class="week-description">3주차</p>
-          <p class="week-description">
-            <a href="https://www.notion.so/3rd-1268300a66a840b2a636ff1c90d9d115?pvs=4">
-              CSS 태그, 속성 학습. 실습코드 작성
-            </a>
-          </p>
-          <p class="week-description">4주차</p>
-          <p class="week-description">
-            <a href="https://www.notion.so/4th-7d89a39d050f4cf8a5642050bb11fab6?pvs=4">
-              런타임환경, DB 조사
-            </a>
-          </p>
-          <p class="week-description">추가 예정</p>
-        </section>
-      </div>
-      <div></div>
-      <section>
-        <strong>
-          <h2>Contact</h2>
-        </strong>
-        <p>Email: openup0102@naver.com </p>
-        <p>Other Platforms :</p>
+      <div className="project-info">{projectInfo}</div>
+      <section className="contact-section">
+        <h2>Contact</h2>
+        <p>Email: dlwldls1046@naver.com </p>
+        <p>Platforms</p>
         <div>
           <a
-            href="https://github.com/8woo4"
+            href="https://github.com/dlwldls1046"
             target="_blank"
             rel="noopener noreferrer"
-            className="icon"
           >
             <FaGithub /> GitHub
-          </a>
-          <a
-            href="https://www.instagram.com/8woo4/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon"
-          >
-            <FaInstagram /> Instagram
           </a>
         </div>
       </section>
@@ -117,4 +79,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Home
