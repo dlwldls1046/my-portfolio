@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 107, 142, 35;
+  --background-end-rgb: 255, 255, 255;
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+body {
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* 각 section에 상하 여백 추가 */
+section {
+  margin-bottom: 20px;
+}
+
+/* header의 아래에 마진 추가 */
+header {
+  margin-bottom: 20px;
+  background-color: white; /* 흰색 배경 */
+  padding: 20px; /* 헤더 주변에 여백을 추가. */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  transition: background-color 0.3s ease-in-out; /* 배경색 전환 효과 추가 */
+}
+
+header h1 {
+  font-size: 36px; /* 헤더 제목의 글자 크기를 조절. */
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); /* 글자에 그림자 추가 */
+}
+
+/* h1에도 마진 추가 */
+h1 {
+  margin-bottom: 10px;
+}
+
+/* h2에도 마진 추가 */
+h2 {
+  margin-bottom: 10px;
+}
+
+/* strong(강조) 요소에 마진 추가 */
+strong {
+  display: block; /* block 요소로 만들어서 새로운 줄에서 시작. */
+  margin-bottom: 5px;
+}
+
+ul li {
+  margin-bottom: 20px; /* 상하 여백을 조절. */
+}
+
+/* 각 섹션의 텍스트를 가운데 정렬 */
+section {
+  text-align: center;
+}
+
+/* h1, h2, h3 등의 헤더도 가운데 정렬 */
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* strong(강조) 요소도 가운데 정렬 */
+strong {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+li p {
+  margin-top: 1em; /* 여백 크기 조절 */
+}
+
+header {
+  background-color: white; /* 흰색 배경 */
+}
+
+.section-wrapper {
+  border: 1px solid #4d4d4d; /* 네모 테두리 스타일과 색상을 설정. */
+  border-radius: 8px; /* 테두리의 꼭지점을 둥글게  */
+  margin-bottom: 20px; /* 각 섹션 사이에 여백 추가 */
+  padding: 20px; /* 각 섹션 내부 여백 추가 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1:hover {
+  color: #ffffff;
+  background-color: #000000; /* 호버. */
+}
+
+header {
+  padding: 20px; /* 헤더 주변에 여백을 추가. */
+}
+
+h1 {
+  font-size: 36px; /* 헤더 제목의 글자 크기를 조절. */
+}
+
+a:hover {
+  color: #ffffff; /* 호버 시 텍스트 색상 변경 */
+  background-color: #000000; /* 호버 시 배경색 변경 */
+  text-decoration: underline; /* 호버 시 텍스트에 밑줄 추가 */
+}
+
+.icon {
+  text-align: right;
+}
+
+.week-description {
+  margin-bottom: 20px; /* 원하는 여백 크기를 지정. */
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 세로 가운데 정렬을 위한 설정 */
+}
+
+/* 각 아이콘에 마진을 추가하여 여백을 조절 */
+.icon a {
+  margin-right: 10px; /* 아이콘 사이 여백 조절 */
+}
