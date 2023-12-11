@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+User
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -10,7 +7,7 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 107, 142, 35;
+  --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -88,8 +85,8 @@ body {
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  padding: 30;
+  margin: 100;
 }
 
 html,
@@ -121,21 +118,12 @@ a {
 
 /* 각 section에 상하 여백 추가 */
 section {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /* header의 아래에 마진 추가 */
 header {
-  margin-bottom: 20px;
-  background-color: white; /* 흰색 배경 */
-  padding: 20px; /* 헤더 주변에 여백을 추가. */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-  transition: background-color 0.3s ease-in-out; /* 배경색 전환 효과 추가 */
-}
-
-header h1 {
-  font-size: 36px; /* 헤더 제목의 글자 크기를 조절. */
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); /* 글자에 그림자 추가 */
+  margin-bottom: 50px;
 }
 
 /* h1에도 마진 추가 */
@@ -155,82 +143,78 @@ strong {
 }
 
 ul li {
-  margin-bottom: 20px; /* 상하 여백을 조절. */
+  margin-bottom: 60px; /* 상하 여백을 조절. */
 }
 
 /* 각 섹션의 텍스트를 가운데 정렬 */
 section {
-  text-align: center;
+  text-align: left;
 }
 
 /* h1, h2, h3 등의 헤더도 가운데 정렬 */
 h1,
 h2,
 h3 {
-  text-align: center;
+  text-align: left;
 }
 
 /* strong(강조) 요소도 가운데 정렬 */
 strong {
   display: block;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 li p {
-  margin-top: 1em; /* 여백 크기 조절 */
+  margin-top: 1.5em; /* 원하는 여백 크기로 조절하세요 */
 }
 
 header {
-  background-color: white; /* 흰색 배경 */
+  background-color: rgb(186, 98, 98)92, 123, 123); /* 흰색 배경 */
 }
 
 .section-wrapper {
-  border: 1px solid #4d4d4d; /* 네모 테두리 스타일과 색상을 설정. */
+  border: 1px solid #ad5252; /* 네모 테두리 스타일과 색상을 설정. */
   border-radius: 8px; /* 테두리의 꼭지점을 둥글게  */
   margin-bottom: 20px; /* 각 섹션 사이에 여백 추가 */
   padding: 20px; /* 각 섹션 내부 여백 추가 */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1:hover {
-  color: #ffffff;
-  background-color: #000000; /* 호버. */
+  color: rgb(202, 151, 151);
+  background-color: #af5f5f; /* 호버. */
 }
 
 header {
-  padding: 20px; /* 헤더 주변에 여백을 추가. */
+  padding: 20px; /* 헤더 주변에 여백을 추가합니다. */
 }
 
 h1 {
-  font-size: 36px; /* 헤더 제목의 글자 크기를 조절. */
+  font-size: 36px; /* 헤더 제목의 글자 크기를 조절합니다. */
 }
 
 a:hover {
-  color: #ffffff; /* 호버 시 텍스트 색상 변경 */
-  background-color: #000000; /* 호버 시 배경색 변경 */
+  color: #0d0303; /* 호버 시 텍스트 색상 변경 */
+  background-color: #db7e7e; /* 호버 시 배경색 변경 */
   text-decoration: underline; /* 호버 시 텍스트에 밑줄 추가 */
 }
 
-.icon {
-  text-align: right;
+.project-info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: #ce7070;
+  color: #6f3737;
+  text-align: center;
+  display: none;
 }
 
-.week-description {
-  margin-bottom: 20px; /* 원하는 여백 크기를 지정. */
+.project-item:hover + .project-info {
+  display: show;
 }
 
-h2 {
-  font-size: 20px;
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* 세로 가운데 정렬을 위한 설정 */
-}
-
-/* 각 아이콘에 마진을 추가하여 여백을 조절 */
-.icon a {
-  margin-right: 10px; /* 아이콘 사이 여백 조절 */
+ul {
+  list-style: none;
 }
